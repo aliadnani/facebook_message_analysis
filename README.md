@@ -22,11 +22,11 @@ Analysis done on my downloaded Facebook Messenger data (I mainly use messenger f
 
 ### Cumulative Messages Sent Over Time
 ### From Mar 3, 2013 - Mar 19, 2020
-![Cumulative Messages sent over time ](/graphs/cumulative_messages_over_time.png)
+![Cumulative Messages sent over time ](/images/cumu_msgs.svg)
   
 ### Total Number of Messages Sent: 145406
 ### From Mar 3, 2013 - Mar 19, 2020
-![Messages sent over time ](/graphs/messages_over_time.png)
+![Messages sent over time ](/images/date_msgs.svg)
   
 ## Most Common Words
 

@@ -20,16 +20,16 @@ Analysis done on my downloaded Facebook Messenger data (I mainly use messenger f
 ## Messages Sent Over Time (Binned by day)
 
 
-## Cumulative Messages Sent Over Time
+### Cumulative Messages Sent Over Time
 ### From Mar 3, 2013 - Mar 19, 2020
 ![Cumulative Messages sent over time ](/graphs/cumulative_messages_over_time.png)
-
+  
 ### Total Number of Messages Sent: 145406
 ### From Mar 3, 2013 - Mar 19, 2020
 ![Messages sent over time ](/graphs/messages_over_time.png)
-
+  
 ## Most Common Words
-![Most Common Words](/graphs/common_words.png)
+
 | word | count |     |      |      |      |
 |------|-------|-----|------|------|------|
 | i    | 17451 | a   | 7888 | yeah | 4497 |
@@ -39,7 +39,9 @@ Analysis done on my downloaded Facebook Messenger data (I mainly use messenger f
 | to   | 9456  | so  | 5180 | in   | 4137 |
 | the  | 9429  | im  | 4552 |      |      |
 | and  | 8158  | u   | 4507 |      |      |
-
+  
+![Most Common Words](/images/common_words.svg)
+  
 ## Messages Sent by Day
 | day_of_week | count   |
 |-------------|---------|
@@ -50,8 +52,8 @@ Analysis done on my downloaded Facebook Messenger data (I mainly use messenger f
 | Friday      | 18374   |
 | Saturday    | 16822   |
 | Sunday      | 18209   |
-
-![Messages Sent by Day](/graphs/messages_on_day.png)
+  
+![Messages Sent by Day](/images/messages_on_day.svg)
 
 
 
@@ -66,11 +68,11 @@ Analysis done on my downloaded Facebook Messenger data (I mainly use messenger f
 | 03          | 417   | 09          | 3160  | 15          | 6788  | 21          | 11334 |
 | 04          | 318   | 10          | 4704  | 16          | 6612  | 22          | 12779 |
 | 05          | 146   | 11          | 5448  | 17          | 9060  | 23          | 10789 |
-
-![Messages Sent by Hour](/graphs/messages_on_hour.png)
+  
+![Messages Sent by Hour](/images/hour_msgs.svg)
 
 ## Messages Sent by Person
-![Messages Sent by person](/graphs/messages_sent_person.png)
+![Messages Sent by person](/images/person.svg)
 
 ## Markov Chain Text Generator
 

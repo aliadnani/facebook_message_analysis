@@ -50,6 +50,8 @@ The longest string I have sent is 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaa...' with a leng
 
 The longest valid word I have sent in which the word is a member of (https://github.com/dwyl/english-words) is a tie between 4 words that have 16 chars: 'entrepreneurship', 'responsibilities', 'semiprofessional', and 'electromagnetism'. It turns out I do not use that many big words in day to day texting. But then again only 1.708% of the words in the english words list have a length greater than 16, so I don't think I'm too dar off.
 
+The longest message was an English essay assignment I sent over to a friend for their review, the length was around 6000 characters.
+
 
 
 

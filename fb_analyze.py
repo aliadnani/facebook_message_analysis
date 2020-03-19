@@ -7,16 +7,8 @@ import json
 import os
 import glob
 import re
-import seaborn as sns
 import plotly.express as px
-from matplotlib import pyplot as plt
-from matplotlib import rcParams
 from datetime import datetime, timedelta
-
-
-# %%
-rcParams['font.family'] = 'sans-serif'
-rcParams['font.sans-serif'] = ['Roboto']
 
 
 # %%
@@ -32,10 +24,6 @@ def parse_single_json(path, name):
         pass
         print("JSON Loaded")
     # Create Dataframe from JSON
-
-
-# %%
-os.getcwdb()
 
 
 # %%
@@ -110,81 +98,21 @@ df_combined = df_combined[df_combined["content"].isnull() == 0]
 
 
 # %%
+
 df_photos = df_photos['photos'].apply(lambda x : len(x))
-print(df_photos)
-
-
-# %%
 df_videos = df_videos['videos'].apply(lambda x : len(x))
-print(df_videos)
 
 
 # %%
-print(df_combined.count())
-
-
-# %%
-df_wordcount_series = df_combined['content'].str.split(expand=True)
-print(df_wordcount_series)
-
-
-# %%
-df_wordcount_series = df_wordcount_series.stack()
-print(df_wordcount_series)
-
-
-# %%
+df_wordcount_series = df_combined['content'].str.split(expand=True).stack()
 df_wordcount_series = df_wordcount_series.str.replace(r'[^\w\s]+', '')
 df_wordcount_series = df_wordcount_series.str.lower()
-print(df_wordcount_series)
-
-
-# %%
 df_wordcount_series = df_wordcount_series.value_counts()
-print(df_wordcount_series)
-
-
-# %%
-df_wordcount_series['fuck']
 
 
 # %%
 top20words = df_wordcount_series.iloc[0:20]
 print(top20words)
-
-
-# %%
-maxword = 'i'
-maxword2 = 'i'
-maxword3 = 'i'
-for i in range(len(df_wordcount_series)):
-    if len(df_wordcount_series.index[i]) > len(maxword):
-        maxword3 = maxword2
-        maxword2 = maxword
-
-        maxword = df_wordcount_series.index[i]
-
-print(maxword)
-print(maxword2)
-print(maxword3)
-
-
-
-# %%
-maxword = 'i'
-maxword2 = 'i'
-maxword3 = 'i'
-for i in range(len(df_wordcount_series)):
-    if len(df_wordcount_series.index[i]) > len(maxword):
-        maxword3 = maxword2
-        maxword2 = maxword
-
-        maxword = df_wordcount_series.index[i]
-
-print(maxword)
-print(maxword2)
-print(maxword3)
-
 
 
 # %%
@@ -204,15 +132,28 @@ cf.set_config_file(offline=False, world_readable=True)
 
 # %%
 df_combined['hour_of_day'] = df_combined['timestamp_hkt'].apply(lambda x : x.strftime('%H'))
-df_combined.groupby(['hour_of_day'])['content'].count().iplot(dimensions=(1500,1000),colors=["DarkOrchid",],kind='bar',title="Texts on Hour",yTitle="Frequency",xTitle="Hour")
+df_hour_fig = df_combined.groupby(['hour_of_day'])['content'].count().iplot(dimensions=(900,600),colors=["DarkOrchid",],kind='bar',title="Texts on Hour",yTitle="Frequency",xTitle="Hour",asFigure=True)
+df_hour_fig.write_image("images/hour_msgs.svg")
+df_hour_fig.show()
 
 
 # %%
-df_combined.groupby(['date'])['content'].count().iplot(dimensions=(1500,1000),colors=["MediumTurquoise",],kind='bar',title="Texts on Day",yTitle="Frequency",xTitle="Day")
+df_date_fig = df_combined.groupby(['date'])['content'].count().iplot(dimensions=(900,600),colors=["MediumTurquoise",],kind='bar',title="Texts on Day",yTitle="Frequency",xTitle="Day",asFigure=True)
+df_date_fig.write_image("images/date_msgs.svg")
+df_date_fig.show()
 
 
 # %%
-df_combined.groupby(['day_of_week'])['content'].count().iplot(dimensions=(1500,1000),colors=["Aquamarine",],kind='bar',title="Messages on Day",yTitle="Frequency",xTitle="Day")
+df_date_rollingsum = df_combined.groupby(['date'])['content'].count().cumsum()
+df_date_rollingsum_fig = df_date_rollingsum.iplot(dimensions=(900,600),colors=["MediumSpringGreen",],kind='area',fill=True,title="Cumulative Messages Over Time ",yTitle="Frequency",xTitle="Day",asFigure=True)
+df_date_rollingsum_fig.write_image("images/cumu_msgs.svg")
+df_date_rollingsum_fig.show()
+
+
+# %%
+messages_on_day = df_combined.groupby(['day_of_week'])['content'].count().iplot(dimensions=(900,600),colors=["Aquamarine",],kind='bar',title="Messages on Day",yTitle="Frequency",xTitle="Day",asFigure=True)
+messages_on_day.write_image("images/messages_on_day.svg")
+messages_on_day.show()
 
 
 # %%
@@ -223,33 +164,53 @@ cf.set_config_file(offline=False, world_readable=True)
 
 
 # %%
-top20words.iplot(dimensions=(1500,1000),subplots=True,colors=["red",],kind='bar',title="Most Commonly Used Words",yTitle="Frequency",xTitle="Word")
+top20words_fig = top20words[0:-1].iplot(dimensions=(900,600),subplots=True,colors=["red",],kind='bar',title="Most Commonly Used Words",yTitle="Frequency",xTitle="Word",asFigure=True)
+top20words_fig.write_image("images/common_words.svg")
+top20words_fig.show()
+
+
+# %%
+
+if not os.path.exists("images"):
+    os.mkdir("images")
+
+
+# %%
+
+data={'Metric':["Total Number of Messages Sent","Number of Photos Sent","Number of Videos Sent","Total Number of Words Sent","Total Number of Characters Sent","Average Number of Messages Sent per Day","Average Word Count per Message", "Average Character Count per Message"], 'Value':[df_combined.content.count(),df_photos.sum(),df_videos.sum(),df_combined.character_count.sum(),df_combined.word_count.sum(),df_combined.groupby(['date'])['content'].count().mean(),df_combined.word_count.mean(), df_combined.character_count.mean()]}
+dd=pd.DataFrame(data,columns=['Index','Metric','Value'])
 
 
 # %%
 import plotly.graph_objects as go
+import psutil
+
 fig = go.Figure(data=[go.Table(header=dict(values=['Metric', 'Value']),cells=dict( align='left',values=[["Total Number of Messages Sent","Number of Photos Sent","Number of Videos Sent","Total Number of Words Sent","Total Number of Characters Sent","Average Number of Messages Sent per Day","Average Word Count per Message", "Average Character Count per Message"], [df_combined.content.count(),df_photos.sum(),df_videos.sum(),df_combined.character_count.sum(),df_combined.word_count.sum(),df_combined.groupby(['date'])['content'].count().mean(),df_combined.word_count.mean(), df_combined.character_count.mean()]]))])
+fig.update_layout(width=600,
+    height=600,)
+fig.write_image("images/markov_gen.svg")
 fig.show()
 
 
 # %%
-# df_combined.groupby(['sender'])['content'].count().reset_index(name='count') \
-#                              .sort_values(['count'], ascending=False) \
-#                              .head(5).iplot(colors=["LightSeaGreen",],kind='bar',title="Texts on Hour",yTitle="Frequency",xTitle="Hour")
-
-df_combined.groupby(['sender'])['content'].count().reset_index(name='count').sort_values(['count'], ascending=False).set_index('sender').head(6).iplot(dimensions=(1500,1000),colors=["PaleGreen",],kind='bar',title="Messages Sent to Person",yTitle="Frequency",xTitle="Person")
 
 
-# %%
-a = "aaabaaa?"
-a = a.replace(r'[^\w\s]+', '')
-print(a)
+person_fig = df_combined.groupby(['sender'])['content'].count().reset_index(name='count').sort_values(['count'], ascending=False).set_index('sender').head(6)
+person_fig['sender_hidden'] = range(1, len(person_fig) + 1)
+person_fig['sender_hidden'] = person_fig['sender_hidden'].apply(lambda x : 'Person' + str(x))
+person_fig = person_fig.set_index('sender_hidden')
+print(person_fig)
+person_fig = person_fig.iplot(dimensions=(900,600),colors=["PaleGreen",],kind='bar',title="Messages Sent to Person",yTitle="Frequency",xTitle="Person",asFigure='True')
+person_fig.write_image("images/person.svg")
+
+person_fig.show()
 
 
 # %%
 words_list = df_combined['content'].values.tolist()
 corpus = '\n'.join(words_list)
 corpus = re.sub(r'[^\w\s]','',corpus)
+corpus = corpus.lower()
 print(corpus)
 
 
@@ -260,13 +221,23 @@ text_model = markovify.NewlineText(corpus)
 
 # %%
 markov_array = []
-for i in range(15):
+for i in range(10):
     markov_array.append(text_model.make_short_sentence(320))
 
 
 # %%
-fig2 = go.Figure(data=[go.Table(header=dict(align='left',values=['No.', 'Generated Markov Chain']),cells=dict( align='left',values=[list(range(15)), markov_array]))])
+pd.Series(markov_array).to_excel('mm.xlsx')
+
+
+# %%
+fig2 = go.Figure(data=[go.Table(header=dict(align='left',values=['No.', 'Generated Markov Chain']),cells=dict( align='left',values=[list(range(1,11)), markov_array]))])
+fig2.update_layout(width=800,
+    height=800,)
 fig2.show()
+
+
+# %%
+
 
 # %% [markdown]
 # # LSTM TEXT GENERATION 

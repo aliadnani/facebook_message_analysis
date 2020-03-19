@@ -30,9 +30,7 @@ Analysis done on my downloaded Facebook Messenger data
 ### Messages Sent Over Time (Binned by day)
 ### From Mar 3, 2013 - Mar 19, 2020
   
-I didn't have too many texting friends until high school where I began texting alot more.
-
-This data may not be 100% representative as I occasionally also used WhatsApp to communicate throughout the years.
+I didn't have too many texting friends until high school where I began texting alot more. But texting in high school was mainly done over WhatsApp. I started using Messenger after starting university. 
   
 ![Messages sent over time ](/images/date_msgs.svg)
 
@@ -44,14 +42,6 @@ This data may not be 100% representative as I occasionally also used WhatsApp to
   
 ## Most Common Words
 My day-to-day vocabulary is generally kept simple and casual.
-
-### Extras: Longest Words & Longest Message
-The longest string I have sent is 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaa...' with a length of 461 'a's to spam my friend. Another notable mentions are 'hahahahahahahaha...' with a length of 312. Some Website links I have sent have also ended being long as well (+50 chars).
-
-The longest valid word I have sent in which the word is a member of (https://github.com/dwyl/english-words) is a tie between 4 words that have 16 chars: 'entrepreneurship', 'responsibilities', 'semiprofessional', and 'electromagnetism'. It turns out I do not use that many big words in day to day texting. But then again only 1.708% of the words in the english words list have a length greater than 16, so I don't think I'm too dar off.
-
-The longest message was an English essay assignment I sent over to a friend for their review, the length was around 6000 characters.
-
 
 
 
@@ -68,6 +58,15 @@ The longest message was an English essay assignment I sent over to a friend for 
   
 ![Most Common Words](/images/common_words.svg)
   
+  
+### Extras: Longest Words & Longest Message
+The longest string I have sent is 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaa...' with a length of 461 'a's to spam my friend. Another notable mentions are 'hahahahahahahaha...' with a length of 312. Some Website links I have sent have also ended being long as well (+50 chars).
+
+The longest valid word I have sent in which the word is a member of (https://github.com/dwyl/english-words) is a tie between 4 words that have 16 chars: 'entrepreneurship', 'responsibilities', 'semiprofessional', and 'electromagnetism'. It turns out I do not use that many big words in day to day texting. But then again only 1.708% of the words in the english words list have a length greater than 16, so I don't think I'm too dar off.
+
+The longest message was an English essay assignment I sent over to a friend for their review, the length was around 6000 characters.
+
+
 ## Messages Sent by Day
 | day_of_week | count   |
 |-------------|---------|
@@ -100,7 +99,8 @@ I text alot throughout the day with peak texting time at 10pm and min time at 5a
 ![Messages Sent by Hour](/images/hour_msgs.svg)
 
 ## Messages Sent by Person
-![Messages Sent by person](/images/person.svg)
+(Names Hidden)
+![Messages Sent by person](/images/person2.svg)
 
 ## Markov Chain Text Generator
 

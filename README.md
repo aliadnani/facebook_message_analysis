@@ -21,22 +21,23 @@ Analysis done on my downloaded Facebook Messenger data
 
 **Key Takeaways:**
 
-- I text considerably more than the average person in my demographic (Every day people, aged 18–24, send **and receive** about 128 texts -> 64 sent per day); I am on 98.6
-- **However,** my texting style is inconcise (Average Word Count per Message: 18.209),as often breaking up longer texts into shorter messages; eg (Hi! <send>, are you hungry? <send>, I'm going to cook <send>)
-- Average of 1 photo sent per 50 text messages, interesting find: I thought this would be more.
+- I text considerably more than the average person in my demographic (Every day people, aged 18–24, send **and receive** about 128 texts -> 64 sent per day); I am on 98.6.
+- **However,** my texting style is inconcise (Average Word Count per Message: 18.209), as I am often breaking up longer texts into shorter messages; eg (Hi! <send>, are you hungry? <send>, I'm going to cook <send>)
+- Average of 1 photo sent per 50 text messages (interesting find: I thought this would be more).
 	
 
 
 ### Messages Sent Over Time (Binned by day)
 ### From Mar 3, 2013 - Mar 19, 2020
   
-I didn't have too many texting friends until high school where I began texting alot more. But texting in high school was mainly done over WhatsApp. I started using Messenger after starting university. 
+I didn't have too many texting friends until high school where I began texting alot more; but texting in high school was mainly done over WhatsApp. I started using Messenger after starting university (Sept. 2017). 
   
 ![Messages sent over time ](/images/date_msgs.svg)
-
+(x-axis is labelled wrong sorry!)
 ### Cumulative Messages Sent Over Time
 ### From Mar 3, 2013 - Mar 19, 2020
 ![Cumulative Messages sent over time ](/images/cumu_msgs.svg)
+(x-axis is labelled wrong sorry!)
   
 
   
@@ -60,11 +61,11 @@ My day-to-day vocabulary is generally kept simple and casual.
   
   
 ### Extras: Longest Words & Longest Message
-The longest string I have sent is 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaa...' with a length of 461 'a's to spam my friend. Another notable mentions are 'hahahahahahahaha...' with a length of 312. Some Website links I have sent have also ended being long as well (+50 chars).
+The longest string I have sent is 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaa...' with a length of 1512 'a's to annoy my friend :) . Another notable mention is 'hahahahahahahaha...' with a length of 312. Some Website links I have sent have also ended being long as well (+50 chars).
 
-The longest valid word I have sent in which the word is a member of (https://github.com/dwyl/english-words) is a tie between 4 words that have 16 chars: 'entrepreneurship', 'responsibilities', 'semiprofessional', and 'electromagnetism'. It turns out I do not use that many big words in day to day texting. But then again only 1.708% of the words in the english words list have a length greater than 16, so I don't think I'm too dar off.
+The longest valid word I have sent in which the word is a member of (https://github.com/dwyl/english-words) is a tie between 4 words that have 16 chars: 'entrepreneurship', 'responsibilities', 'semiprofessional', and 'electromagnetism'. It turns out, I seldom use big words in day to day texting. (Fun fact: 1.708% of the words in the ^^english words list have a length greater than 16)
 
-The longest message was an English essay assignment I sent over to a friend for their review, the length was around 6000 characters.
+The longest message I have sent turned out to be an English essay assignment I sent over to a friend for their review as plain text, the length was ~8000 characters/1500 Words.
 
 
 ## Messages Sent by Day
@@ -84,8 +85,10 @@ The longest message was an English essay assignment I sent over to a friend for 
 
 
 ## Messages Sent by Hour
-  
-I text alot throughout the day with peak texting time at 10pm and min time at 5am where I'm probably asleep
+
+I text alot throughout the day with peak texting hours at 6-10pm and off-hours at 3-5am where I'm most days I am asleep.
+
+I originaly wanted to take into account the timezone of the place I was texting from, but this is not possible as location_message_was_sent_from is not an attribute of the downloaded data. Howeve, I think this data is more or less representative as I have mainly been staying in one timezone (Hong Kong) and have only been out of the country for at most 3 weeks in a year at Indonesia where the timezone offset is only 1 hour. 
 
 | hour_of_day | count | hour_of_day | count | hour_of_day | count | hour_of_day | count |
 |-------------|-------|-------------|-------|-------------|-------|-------------|-------|
@@ -104,7 +107,7 @@ I text alot throughout the day with peak texting time at 10pm and min time at 5a
 
 ## Markov Chain Text Generator
 
-The original scope of this project was to generate a predictive model from my language style and how I text for generating text; Similar to the word prediction on your phone keyboard.
+The original scope of this project was to generate a predictive model from my language style and how I text for generating text; similar to the word prediction on your phone keyboard.
 
 This implementation of a simple predictive model uses markov chains.
 
@@ -112,7 +115,7 @@ Some good resources:
 https://en.wikipedia.org/wiki/Markov_chain
 https://medium.com/analytics-vidhya/making-a-text-generator-using-markov-chains-e17a67225d10
 
-Initially implemented Markov chains using this implementiation:
+Initially implemented Markov chains using this code:
 
 		from collections import defaultdict, Counter
 		import random
@@ -158,4 +161,6 @@ There is also code in this project to train a LSTM model to generate text. Its m
 The weights model that is supplied is trained for 1 epoch and is generally low quality usually generating strings like: 'ssddd sddff'
 
 I intend to train this model further when I get tensorflow set up on my graphics-card-equipped desktop PC.
+
+![Training on my Laptop](/images/Laptop.PNG)
 

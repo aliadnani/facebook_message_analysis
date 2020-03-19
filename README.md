@@ -30,9 +30,7 @@ Analysis done on my downloaded Facebook Messenger data
 ### Messages Sent Over Time (Binned by day)
 ### From Mar 3, 2013 - Mar 19, 2020
   
-I didn't have too many texting friends until high school where I began texting alot more.
-
-This data may not be 100% representative as I occasionally also used WhatsApp to communicate throughout the years.
+I didn't have too many texting friends until high school where I began texting alot more. But texting in high school was mainly done over WhatsApp. I started using Messenger after starting university. 
   
 ![Messages sent over time ](/images/date_msgs.svg)
 

@@ -100,6 +100,7 @@ I text alot throughout the day with peak texting time at 10pm and min time at 5a
 ![Messages Sent by Hour](/images/hour_msgs.svg)
 
 ## Messages Sent by Person
+(Names Hidden)
 ![Messages Sent by person](/images/person2.svg)
 
 ## Markov Chain Text Generator

@@ -30,31 +30,18 @@ Analysis done on my downloaded Facebook Messenger data (I mainly use messenger f
 
 ## Most Common Words
 ![Most Common Words](/graphs/common_words.png)
-
-|      | 0     |
-|------|-------|
-| i    | 17451 |
-| you  | 11572 |
-| like | 10337 |
-| dude | 10333 |
-| to   | 9456  |
-| the  | 9429  |
-| and  | 8158  |
-| a    | 7888  |
-| it   | 7422  |
-| but  | 6774  |
-| is   | 6382  |
-| so   | 5180  |
-| im   | 4552  |
-| u    | 4507  |
-| yeah | 4497  |
-| its  | 4412  |
-| that | 4303  |
-| do   | 4294  |
-| in   | 4137  |
+| word | count |     |      |      |      |
+|------|-------|-----|------|------|------|
+| i    | 17451 | a   | 7888 | yeah | 4497 |
+| you  | 11572 | it  | 7422 | its  | 4412 |
+| like | 10337 | but | 6774 | that | 4303 |
+| dude | 10333 | is  | 6382 | do   | 4294 |
+| to   | 9456  | so  | 5180 | in   | 4137 |
+| the  | 9429  | im  | 4552 |      |      |
+| and  | 8158  | u   | 4507 |      |      |
 
 ## Messages Sent by Day
-| day_of_week | content |
+| day_of_week | count   |
 |-------------|---------|
 | Monday      | 23858   |
 | Tuesday     | 22548   |
@@ -71,32 +58,14 @@ Analysis done on my downloaded Facebook Messenger data (I mainly use messenger f
 
 ## Messages Sent by Hour
 
-| hour_of_day | content |
-|-------------|---------|
-| 00          | 7444    |
-| 01          | 3608    |
-| 02          | 1178    |
-| 03          | 417     |
-| 04          | 318     |
-| 05          | 146     |
-| 06          | 1057    |
-| 07          | 1126    |
-| 08          | 1843    |
-| 09          | 3160    |
-| 10          | 4704    |
-| 11          | 5448    |
-| 12          | 7922    |
-| 13          | 7511    |
-| 14          | 7285    |
-| 15          | 6788    |
-| 16          | 6612    |
-| 17          | 9060    |
-| 18          | 10869   |
-| 19          | 12420   |
-| 20          | 11588   |
-| 21          | 11334   |
-| 22          | 12779   |
-| 23          | 10789   |
+| hour_of_day | count | hour_of_day | count | hour_of_day | count | hour_of_day | count |
+|-------------|-------|-------------|-------|-------------|-------|-------------|-------|
+| 00          | 7444  | 06          | 1057  | 12          | 7922  | 18          | 10869 |
+| 01          | 3608  | 07          | 1126  | 13          | 7511  | 19          | 12420 |
+| 02          | 1178  | 08          | 1843  | 14          | 7285  | 20          | 11588 |
+| 03          | 417   | 09          | 3160  | 15          | 6788  | 21          | 11334 |
+| 04          | 318   | 10          | 4704  | 16          | 6612  | 22          | 12779 |
+| 05          | 146   | 11          | 5448  | 17          | 9060  | 23          | 10789 |
 
 ![Messages Sent by Hour](/graphs/messages_on_hour.png)
 

@@ -4,3 +4,4 @@ messages/
 .gitattributes
 aa.txt
 fb_analyze - Copy.ipynb
+*.xlsx

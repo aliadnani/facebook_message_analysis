@@ -32,8 +32,17 @@ Analysis done on my downloaded Facebook Messenger data
   
 I didn't have too many texting friends until high school where I began texting alot more; but texting in high school was mainly done over WhatsApp. I started using Messenger after starting university (Sept. 2017). 
   
+#### Messages sent over time binned by day
 ![Messages sent over time ](/images/date_msgs.svg)
 (x-axis is labelled wrong sorry!)
+  
+#### Messages sent over time binned by month
+![Messages sent over time ](/images/dateM_msgs.svg)
+  
+**Interesting Observation:** That sudden decrease in between 2018 and 2019 is during the months of June - August where I had a summer job and had probably less time to text. Summer vacation could also mean I would see my friends more in person and would less likely text. I can't be exactly sure.
+  
+I also went on vacation to Indonesia in August where the connectivity was low which could also be a factor in the decrease in messages sent too.
+
 ### Cumulative Messages Sent Over Time
 ### From Mar 3, 2013 - Mar 19, 2020
 ![Cumulative Messages sent over time ](/images/cumu_msgs.svg)
@@ -105,6 +114,14 @@ I originaly wanted to take into account the timezone of the place I was texting 
 (Names Hidden)
 ![Messages Sent by person](/images/person2.svg)
 
+## Extras: Message Conciseness
+
+Reflecting on how i only text 3.9 words per message, I originally suspected that as time continued, my conciseness went down, as I vaguely remembering typing out full sentences as much as possible when starting to text. However, a graph shows this is not the case and that my message conciseness fluctuates quite a bit from 2013-2017 when I texted less on FB Messenger but stabilizes after Sept. 2017 where I begin to text alot on FB Messenger.
+
+![Messages Sent by person](/images/message_conciseness.svg)
+
+Maybe I would get a better result if I can also integrate my WhatsApp data from 2013-2017 when I first started getting into texting, however I am upset that I have lost this data when moving phones a while ago.
+
 ## Markov Chain Text Generator
 
 The original scope of this project was to generate a predictive model from my language style and how I text for generating text; similar to the word prediction on your phone keyboard.
@@ -138,7 +155,7 @@ Initially implemented Markov chains using this code:
 				state = state[1:] + out[-1]
 		print(''.join(out))
     
-But later switched to Markovify python library.
+But later switched to Markovify python library (https://github.com/jsvine/markovify).
 
 Some examples of generated Markov text chains
 |   | 0                                                             |

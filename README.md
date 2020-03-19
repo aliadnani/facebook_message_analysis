@@ -1,6 +1,8 @@
 # Facebook Message Analysis
 
-Analysis done on my downloaded Facebook Messenger data (I mainly use messenger for talking to other people)
+Analysis done on my downloaded Facebook Messenger data
+
+
 
 ## Key Statistics
 
@@ -17,18 +19,32 @@ Analysis done on my downloaded Facebook Messenger data (I mainly use messenger f
 | Average Word Count per Message          | 3.751461425 |
 | Average Character Count per Message     | 18.20966615 |
 
-## Messages Sent Over Time (Binned by day)
+**Key Takeaways:**
 
+- I text considerably more than the average person in my demographic (Every day people, aged 18–24, send **and receive** about 128 texts -> 64 sent per day); I am on 98.6
+- **However,** my texting style is inconcise (Average Word Count per Message: 18.209),as often breaking up longer texts into shorter messages; eg (Hi! <send>, are you hungry? <send>, I'm going to cook <send>)
+- Average of 1 photo sent per 50 text messages
+	
+
+
+### Messages Sent Over Time (Binned by day)
+### From Mar 3, 2013 - Mar 19, 2020
+  
+I didn't have too many texting friends until high school where I began texting alot more.
+
+This data may not be 100% representative as I occasionally also used WhatsApp to communicate throughout the years.
+  
+![Messages sent over time ](/images/date_msgs.svg)
 
 ### Cumulative Messages Sent Over Time
 ### From Mar 3, 2013 - Mar 19, 2020
 ![Cumulative Messages sent over time ](/images/cumu_msgs.svg)
   
-### Total Number of Messages Sent: 145406
-### From Mar 3, 2013 - Mar 19, 2020
-![Messages sent over time ](/images/date_msgs.svg)
+
   
 ## Most Common Words
+My day-to-day vocabulary is generally kept simple and casual.
+(note: punctuation & capitals have been removed, there is an error in 'its' because it's and its counts have been summed together because of thi tokenization))
 
 | word | count |     |      |      |      |
 |------|-------|-----|------|------|------|
@@ -59,6 +75,8 @@ Analysis done on my downloaded Facebook Messenger data (I mainly use messenger f
 
 
 ## Messages Sent by Hour
+  
+I text alot throughout the day with peak texting time at 10pm and min time at 5am where I'm probably asleep
 
 | hour_of_day | count | hour_of_day | count | hour_of_day | count | hour_of_day | count |
 |-------------|-------|-------------|-------|-------------|-------|-------------|-------|

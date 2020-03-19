@@ -162,5 +162,5 @@ The weights model that is supplied is trained for 1 epoch and is generally low q
 
 I intend to train this model further when I get tensorflow set up on my graphics-card-equipped desktop PC.
 
-![Training on my Laptop](/images/Laptop.png)
+![Training on my Laptop](/images/Laptop.PNG)
 

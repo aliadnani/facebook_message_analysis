@@ -23,7 +23,7 @@ Analysis done on my downloaded Facebook Messenger data
 
 - I text considerably more than the average person in my demographic (Every day people, aged 18–24, send **and receive** about 128 texts -> 64 sent per day); I am on 98.6
 - **However,** my texting style is inconcise (Average Word Count per Message: 18.209),as often breaking up longer texts into shorter messages; eg (Hi! <send>, are you hungry? <send>, I'm going to cook <send>)
-- Average of 1 photo sent per 50 text messages
+- Average of 1 photo sent per 50 text messages, interesting find: I thought this would be more.
 	
 
 
@@ -44,7 +44,7 @@ This data may not be 100% representative as I occasionally also used WhatsApp to
   
 ## Most Common Words
 My day-to-day vocabulary is generally kept simple and casual.
-(note: punctuation & capitals have been removed, there is an error in 'its' because it's and its counts have been summed together because of thi tokenization))
+
 
 | word | count |     |      |      |      |
 |------|-------|-----|------|------|------|
@@ -94,13 +94,21 @@ I text alot throughout the day with peak texting time at 10pm and min time at 5a
 
 ## Markov Chain Text Generator
 
-Initially Markov chain using this implementiation:
+The original scope of this project was to generate a predictive model from my language style and how I text for generating text; Similar to the word prediction on your phone keyboard.
+
+This implementation of a simple predictive model uses markov chains.
+
+Some good resources:
+https://en.wikipedia.org/wiki/Markov_chain
+https://medium.com/analytics-vidhya/making-a-text-generator-using-markov-chains-e17a67225d10
+
+Initially implemented Markov chains using this implementiation:
 
 		from collections import defaultdict, Counter
 		import random
 		import sys
 
-		STATE_LEN = 4
+		STATE_LEN = 2
 
 		data = sys.stdin.read()
 		model = defaultdict(Counter)
@@ -132,4 +140,12 @@ Some examples of generated Markov text chains
 | 7 | so hes gotta be respectful                                    |
 | 8 | cant you just write only potatoes as ur first paint job       |
 | 9 | fillet is the universe disappear what would she take him back |
+
+## LSTM Text Generation
+
+There is also code in this project to train a LSTM model to generate text. Its mainly untested as I haven't gotten around to training a model to a high number of epochs.
+
+The weights model that is supplied is trained for 1 epoch and is generally low quality usually generating strings like: 'ssddd sddff'
+
+I intend to train this model further when I get tensorflow set up on my graphics-card-equipped desktop PC.
 

@@ -45,6 +45,14 @@ This data may not be 100% representative as I occasionally also used WhatsApp to
 ## Most Common Words
 My day-to-day vocabulary is generally kept simple and casual.
 
+### Extras: Longest Words & Longest Message
+The longest string I have sent is 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaa...' with a length of 461 'a's to spam my friend. Another notable mentions are 'hahahahahahahaha...' with a length of 312. Some Website links I have sent have also ended being long as well (+50 chars).
+
+The longest valid word I have sent in which the word is a member of (https://github.com/dwyl/english-words) is a tie between 4 words that have 16 chars: 'entrepreneurship', 'responsibilities', 'semiprofessional', and 'electromagnetism'. It turns out I do not use that many big words in day to day texting. But then again only 1.708% of the words in the english words list have a length greater than 16, so I don't think I'm too dar off.
+
+
+
+
 
 | word | count |     |      |      |      |
 |------|-------|-----|------|------|------|

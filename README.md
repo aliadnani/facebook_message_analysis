@@ -1,6 +1,8 @@
 # Facebook Message Analysis
 
-Analysis done on my downloaded Facebook Messenger data (I mainly use messenger for talking to other people)
+Analysis done on my downloaded Facebook Messenger data
+
+
 
 ## Key Statistics
 
@@ -17,19 +19,43 @@ Analysis done on my downloaded Facebook Messenger data (I mainly use messenger f
 | Average Word Count per Message          | 3.751461425 |
 | Average Character Count per Message     | 18.20966615 |
 
-## Messages Sent Over Time (Binned by day)
+**Key Takeaways:**
+
+- I text considerably more than the average person in my demographic (Every day people, aged 18–24, send **and receive** about 128 texts -> 64 sent per day); I am on 98.6
+- **However,** my texting style is inconcise (Average Word Count per Message: 18.209),as often breaking up longer texts into shorter messages; eg (Hi! <send>, are you hungry? <send>, I'm going to cook <send>)
+- Average of 1 photo sent per 50 text messages, interesting find: I thought this would be more.
+	
 
 
-## Cumulative Messages Sent Over Time
+### Messages Sent Over Time (Binned by day)
 ### From Mar 3, 2013 - Mar 19, 2020
-![Cumulative Messages sent over time ](/graphs/cumulative_messages_over_time.png)
+  
+I didn't have too many texting friends until high school where I began texting alot more.
 
-### Total Number of Messages Sent: 145406
+This data may not be 100% representative as I occasionally also used WhatsApp to communicate throughout the years.
+  
+![Messages sent over time ](/images/date_msgs.svg)
+
+### Cumulative Messages Sent Over Time
 ### From Mar 3, 2013 - Mar 19, 2020
-![Messages sent over time ](/graphs/messages_over_time.png)
+![Cumulative Messages sent over time ](/images/cumu_msgs.svg)
+  
 
+  
 ## Most Common Words
-![Most Common Words](/graphs/common_words.png)
+My day-to-day vocabulary is generally kept simple and casual.
+
+### Extras: Longest Words & Longest Message
+The longest string I have sent is 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaa...' with a length of 461 'a's to spam my friend. Another notable mentions are 'hahahahahahahaha...' with a length of 312. Some Website links I have sent have also ended being long as well (+50 chars).
+
+The longest valid word I have sent in which the word is a member of (https://github.com/dwyl/english-words) is a tie between 4 words that have 16 chars: 'entrepreneurship', 'responsibilities', 'semiprofessional', and 'electromagnetism'. It turns out I do not use that many big words in day to day texting. But then again only 1.708% of the words in the english words list have a length greater than 16, so I don't think I'm too dar off.
+
+The longest message was an English essay assignment I sent over to a friend for their review, the length was around 6000 characters.
+
+
+
+
+
 | word | count |     |      |      |      |
 |------|-------|-----|------|------|------|
 | i    | 17451 | a   | 7888 | yeah | 4497 |
@@ -39,7 +65,9 @@ Analysis done on my downloaded Facebook Messenger data (I mainly use messenger f
 | to   | 9456  | so  | 5180 | in   | 4137 |
 | the  | 9429  | im  | 4552 |      |      |
 | and  | 8158  | u   | 4507 |      |      |
-
+  
+![Most Common Words](/images/common_words.svg)
+  
 ## Messages Sent by Day
 | day_of_week | count   |
 |-------------|---------|
@@ -50,13 +78,15 @@ Analysis done on my downloaded Facebook Messenger data (I mainly use messenger f
 | Friday      | 18374   |
 | Saturday    | 16822   |
 | Sunday      | 18209   |
-
-![Messages Sent by Day](/graphs/messages_on_day.png)
+  
+![Messages Sent by Day](/images/messages_on_day.svg)
 
 
 
 
 ## Messages Sent by Hour
+  
+I text alot throughout the day with peak texting time at 10pm and min time at 5am where I'm probably asleep
 
 | hour_of_day | count | hour_of_day | count | hour_of_day | count | hour_of_day | count |
 |-------------|-------|-------------|-------|-------------|-------|-------------|-------|
@@ -66,21 +96,29 @@ Analysis done on my downloaded Facebook Messenger data (I mainly use messenger f
 | 03          | 417   | 09          | 3160  | 15          | 6788  | 21          | 11334 |
 | 04          | 318   | 10          | 4704  | 16          | 6612  | 22          | 12779 |
 | 05          | 146   | 11          | 5448  | 17          | 9060  | 23          | 10789 |
-
-![Messages Sent by Hour](/graphs/messages_on_hour.png)
+  
+![Messages Sent by Hour](/images/hour_msgs.svg)
 
 ## Messages Sent by Person
-![Messages Sent by person](/graphs/messages_sent_person.png)
+![Messages Sent by person](/images/person.svg)
 
 ## Markov Chain Text Generator
 
-Initially Markov chain using this implementiation:
+The original scope of this project was to generate a predictive model from my language style and how I text for generating text; Similar to the word prediction on your phone keyboard.
+
+This implementation of a simple predictive model uses markov chains.
+
+Some good resources:
+https://en.wikipedia.org/wiki/Markov_chain
+https://medium.com/analytics-vidhya/making-a-text-generator-using-markov-chains-e17a67225d10
+
+Initially implemented Markov chains using this implementiation:
 
 		from collections import defaultdict, Counter
 		import random
 		import sys
 
-		STATE_LEN = 4
+		STATE_LEN = 2
 
 		data = sys.stdin.read()
 		model = defaultdict(Counter)
@@ -112,4 +150,12 @@ Some examples of generated Markov text chains
 | 7 | so hes gotta be respectful                                    |
 | 8 | cant you just write only potatoes as ur first paint job       |
 | 9 | fillet is the universe disappear what would she take him back |
+
+## LSTM Text Generation
+
+There is also code in this project to train a LSTM model to generate text. Its mainly untested as I haven't gotten around to training a model to a high number of epochs.
+
+The weights model that is supplied is trained for 1 epoch and is generally low quality usually generating strings like: 'ssddd sddff'
+
+I intend to train this model further when I get tensorflow set up on my graphics-card-equipped desktop PC.
 

@@ -22,7 +22,7 @@ Analysis done on my downloaded Facebook Messenger data
 **Key Takeaways:**
 
 - I text considerably more than the average person in my demographic (Every day people, aged 18–24, send **and receive** about 128 texts -> 64 sent per day); I am on 98.6.
-- **However,** my texting style is inconcise (Average Word Count per Message: 18.209), as I am often breaking up longer texts into shorter messages; eg (Hi! <send>, are you hungry? <send>, I'm going to cook <send>)
+- **However,** my texting style is inconcise (Average Word Count per Message: 3.7), as I am often breaking up longer texts into shorter messages; eg (Hi! (send), are you hungry? (send), I'm going to cook (send))
 - Average of 1 photo sent per 50 text messages (interesting find: I thought this would be more).
 	
 
@@ -116,7 +116,7 @@ I originaly wanted to take into account the timezone of the place I was texting 
 
 ## Extras: Message Conciseness
 
-Reflecting on how i only text 3.9 words per message, I originally suspected that as time continued, my conciseness went down, as I vaguely remembering typing out full sentences as much as possible when starting to text. However, a graph shows this is not the case and that my message conciseness fluctuates quite a bit from 2013-2017 when I texted less on FB Messenger but stabilizes after Sept. 2017 where I begin to text alot on FB Messenger.
+Reflecting on how i only text 3.7 words per message, I originally suspected that as time continued, my conciseness went down, as I vaguely remembering typing out full sentences as much as possible when starting to text. However, a graph shows this is not the case and that my message conciseness fluctuates quite a bit from 2013-2017 when I texted less on FB Messenger but stabilizes after Sept. 2017 where I begin to text alot on FB Messenger.
 
 ![Messages Sent by person](/images/message_conciseness.svg)
 

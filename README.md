@@ -13,8 +13,8 @@ Analysis done on my downloaded Facebook Messenger data
 | Total Number of Messages Sent           | 145406      |
 | Number of Photos Sent                   | 3179        |
 | Number of Videos Sent                   | 141         |
-| Total Number of Words Sent              | 2579381     |
-| Total Number of Characters Sent         | 545485      |
+| Total Number of Characters Sent         | 2579381     |
+| Total Number of Words Sent              | 545485      |
 | Average Number of Messages Sent per Day | 98.64721845 |
 | Average Word Count per Message          | 3.751461425 |
 | Average Character Count per Message     | 18.20966615 |
